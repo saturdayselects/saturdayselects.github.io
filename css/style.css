@@ -209,11 +209,11 @@ nav a:hover { color: #fff; text-decoration: none; }
 
 /* ── Article Body ── */
 .article-wrap {
-  max-width: var(--max);
+  max-width: 700px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 5rem;
 }
-.article-body { max-width: 700px; }
+.article-body { max-width: 100%; }
 .article-body p { margin-bottom: 1.4rem; color: #2a2a2a; }
 .article-body h2 {
   font-size: 1.35rem;
