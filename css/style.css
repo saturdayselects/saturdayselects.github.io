@@ -3,24 +3,22 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --brand:       #1a1a1a;
+  --brand:       #111111;
   --accent:      #c8102e;
-  --accent-dark: #a00d25;
-  --bg:          #f9f7f4;
+  --bg:          #f5f4f1;
   --surface:     #ffffff;
   --text:        #1a1a1a;
   --muted:       #6b6b6b;
   --border:      #e5e2dd;
-  --max:         780px;
+  --max:         820px;
   --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif:  'Georgia', 'Times New Roman', serif;
 }
 
 body {
   font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 17px;
 }
 
@@ -32,6 +30,9 @@ header {
   background: var(--brand);
   color: #fff;
   padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
   max-width: var(--max);
@@ -39,42 +40,43 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 58px;
 }
 .logo {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #fff;
   letter-spacing: -0.02em;
 }
-.logo span { color: var(--accent); }
+.logo span { color: #ff4d4d; }
 nav a {
-  color: #ccc;
-  font-size: 0.875rem;
+  color: #bbb;
+  font-size: 0.85rem;
   margin-left: 1.5rem;
   font-weight: 500;
 }
 nav a:hover { color: #fff; text-decoration: none; }
 
-/* ── Hero ── */
-.hero {
+/* ── Homepage Hero ── */
+.site-hero {
   background: var(--brand);
   color: #fff;
   padding: 4rem 1.5rem 3.5rem;
   text-align: center;
+  border-bottom: 3px solid #ff4d4d;
 }
-.hero h1 {
+.site-hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto 1rem;
 }
-.hero p {
-  color: #aaa;
-  font-size: 1.1rem;
-  max-width: 520px;
+.site-hero p {
+  color: #999;
+  font-size: 1.05rem;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -85,110 +87,206 @@ nav a:hover { color: #fff; text-decoration: none; }
   padding: 0 1.5rem;
 }
 
-/* ── Cards (index) ── */
+/* ── Homepage Cards ── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 2.5rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
 .posts-grid {
   display: grid;
-  gap: 1.5rem;
-  padding: 3rem 0;
+  gap: 1.25rem;
+  padding-bottom: 4rem;
 }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.75rem;
-  transition: box-shadow 0.15s;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  transition: box-shadow 0.15s, transform 0.15s;
 }
-.card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.card-team-bar {
+  width: 6px;
+  flex-shrink: 0;
+}
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+}
 .card-meta {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
-.team-badge {
+.card-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.team-name {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  background: var(--accent);
-  color: #fff;
+  letter-spacing: 0.07em;
+  color: var(--muted);
 }
-.card-date { font-size: 0.8rem; color: var(--muted); }
-.card h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3; }
-.card h2 a { color: var(--text); }
-.card h2 a:hover { color: var(--accent); text-decoration: none; }
-.card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
-.read-more {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-/* ── Article ── */
-.article-header {
-  padding: 3rem 0 2rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2.5rem;
-}
-.article-header .team-badge { margin-bottom: 1rem; display: inline-block; }
-.article-header h1 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.article-header .byline { color: var(--muted); font-size: 0.9rem; }
-
-.article-body { max-width: 680px; }
-.article-body p { margin-bottom: 1.4rem; }
-.article-body h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 2.5rem 0 1rem;
-  letter-spacing: -0.02em;
-}
-.article-body h3 {
+.card h2 {
   font-size: 1.1rem;
   font-weight: 700;
-  margin: 2rem 0 0.6rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.card h2 a { color: var(--text); }
+.card h2 a:hover { color: var(--accent); text-decoration: none; }
+.card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.55;
+}
+.read-more {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Article Team Hero ── */
+.team-hero {
+  padding: 3rem 1.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.team-hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.team-hero-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+.team-hero-text {}
+.team-hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+.team-hero h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.team-hero-tagline {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Article Body ── */
+.article-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+.article-body { max-width: 700px; }
+.article-body p { margin-bottom: 1.4rem; color: #2a2a2a; }
+.article-body h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 2.5rem 0 0.75rem;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--team-color, var(--accent));
+}
+.article-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
 }
 
 /* ── Product Cards ── */
-.product-list { display: grid; gap: 1.25rem; margin: 1.5rem 0 2rem; }
+.product-list { display: grid; gap: 1rem; margin: 1rem 0 1.75rem; }
 .product-card {
   border: 1px solid var(--border);
+  border-left: 4px solid var(--team-color, var(--accent));
   border-radius: 8px;
-  padding: 1.25rem 1.5rem;
+  padding: 1.1rem 1.25rem;
   background: var(--surface);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
-.product-info h3 { font-size: 1rem; margin-bottom: 0.25rem; }
-.product-info p { font-size: 0.875rem; color: var(--muted); margin: 0; }
+.product-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.product-info p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
 .btn-amazon {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   background: #FF9900;
   color: #111;
   font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 6px;
   white-space: nowrap;
   flex-shrink: 0;
 }
 .btn-amazon:hover { background: #e88a00; text-decoration: none; color: #111; }
 
+/* ── Callout Box ── */
+.callout {
+  background: #f0f0f0;
+  border-left: 4px solid var(--team-color, var(--accent));
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+.callout strong { display: block; margin-bottom: 0.25rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--team-color, var(--accent)); }
+
 /* ── Disclosure ── */
 .disclosure {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
   font-style: italic;
 }
@@ -196,13 +294,12 @@ nav a:hover { color: #fff; text-decoration: none; }
 /* ── Footer ── */
 footer {
   background: var(--brand);
-  color: #777;
+  color: #555;
   text-align: center;
   padding: 2rem 1.5rem;
-  font-size: 0.85rem;
-  margin-top: 5rem;
+  font-size: 0.82rem;
 }
-footer a { color: #999; }
+footer a { color: #777; }
 
 /* ── About ── */
 .about-content {
@@ -213,6 +310,12 @@ footer a { color: #999; }
 .about-content p { margin-bottom: 1.25rem; color: #333; }
 
 /* ── Responsive ── */
-@media (min-width: 600px) {
+@media (min-width: 640px) {
   .posts-grid { grid-template-columns: 1fr 1fr; }
+  .team-hero-logo { width: 120px; height: 120px; }
+}
+@media (max-width: 500px) {
+  .team-hero-inner { flex-direction: column; text-align: center; gap: 1rem; }
+  .team-hero-logo { width: 80px; height: 80px; }
+  .product-card { flex-direction: column; align-items: flex-start; }
 }

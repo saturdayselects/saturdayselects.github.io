@@ -8,6 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --team-color: #FF8200; --team-secondary: #ffffff; }
+    .article-body h2 { border-bottom-color: #FF8200; }
+    .product-card { border-left-color: #FF8200; }
+    .callout { border-left-color: #FF8200; }
+    .callout strong { color: #d06a00; }
+  </style>
 </head>
 <body>
 
@@ -21,33 +28,38 @@
     </div>
   </header>
 
-  <main class="container">
-    <div class="article-header">
-      <span class="team-badge" style="background:#FF8200; color:#fff;">Tennessee Volunteers</span>
-      <h1>Tennessee Fan Essentials: GBO Gear for the Neyland Era</h1>
-      <p class="byline">Saturday Selects · May 2025 · Knoxville, TN</p>
+  <!-- Team Hero -->
+  <div class="team-hero" style="background: linear-gradient(135deg, #c06000 0%, #FF8200 60%, #ff9933 100%); border-bottom: 4px solid #ffffff;">
+    <div class="team-hero-inner">
+      <img class="team-hero-logo" src="https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png" alt="Tennessee Volunteers" />
+      <div class="team-hero-text">
+        <p class="team-hero-eyebrow">Saturday Selects · Fan Gear Guide</p>
+        <h1>Tennessee Fan Essentials: GBO Gear for the Neyland Era</h1>
+        <p class="team-hero-tagline">"Rocky Top, you'll always be home sweet home. After everything Vol fans have been through — the moment is here."</p>
+      </div>
     </div>
+  </div>
 
+  <div class="article-wrap">
     <div class="article-body">
+
       <p>
-        Rocky Top, you'll always be home sweet home to me. After everything Tennessee fans have been
-        through — the rebuilding years, the close calls, the waiting — the moment is here.
-        Neyland Stadium at full capacity on a fall Saturday, Tennessee orange from the river to the
-        top of the upper deck. This is the era Vol fans deserve.
+        Neyland Stadium at full capacity on a fall Saturday. Tennessee orange from the Tennessee River
+        to the top of the upper deck. The checkerboard end zones. Rocky Top echoing across the water.
+        This is the era Vol fans deserve — and it's here.
       </p>
       <p>
         GBO. Here's the gear for this era — everything you need for the Vol Walk, the tailgate along
-        the Tennessee River, and a full day in the checkerboard end zones.
+        the river, and a full day in that checkerboard stadium.
       </p>
 
       <h2>Tailgate Essentials</h2>
 
-      <h3>A Cooler That Lasts the Full Day</h3>
+      <h3>A Cooler Built for Game Day</h3>
       <p>
         Knoxville in September is warm, and you're tailgating along the Tennessee River hours before
         kickoff. You need ice that lasts. RTIC and YETI both hold up — the RTIC 45 is the best
-        value for a solo setup or small group, and the YETI Tundra 45 is the lifetime buy if you're
-        ready to invest.
+        value for a solo setup or small crew, and the YETI Tundra 45 is the lifetime buy.
       </p>
       <div class="product-list">
         <div class="product-card">
@@ -68,8 +80,8 @@
 
       <h3>Portable Bluetooth Speaker</h3>
       <p>
-        Rocky Top on repeat before kickoff. You need sound that carries outside. A JBL Charge 5 or
-        a UE Hyperboom is loud enough for a tailgate and won't die mid-afternoon. Waterproof helps
+        Rocky Top on repeat before kickoff. You need sound that carries outside. A JBL Charge 5
+        is loud enough for a proper tailgate and won't die mid-afternoon. Waterproof matters
         when Knoxville does what Knoxville does in October.
       </p>
       <div class="product-list">
@@ -82,13 +94,18 @@
         </div>
       </div>
 
+      <div class="callout">
+        <strong>Neyland River Tailgate</strong>
+        The Vol Navy — boat tailgating on the Tennessee River — is one of the great gameday traditions in college football. If you're doing it, a marine-grade cooler and waterproof speaker are non-negotiable.
+      </div>
+
       <h2>Tennessee Orange, Done Right</h2>
 
       <h3>The Jersey</h3>
       <p>
         Tennessee orange is one of the most recognizable colors in college football. Wear it right.
-        An official Vols replica jersey in that bright orange is unmistakable. This is not the season
-        to show up in faded gear — Tennessee football is back and your wardrobe should reflect that.
+        An official Vols replica jersey in that bright orange is unmistakable in the stands.
+        This is not the season to show up in faded gear.
       </p>
       <div class="product-list">
         <div class="product-card">
@@ -100,18 +117,18 @@
         </div>
         <div class="product-card">
           <div class="product-info">
-            <h3>Tennessee Volunteers Hat</h3>
+            <h3>Tennessee Volunteers Hat — Power T</h3>
             <p>Power T logo. Tennessee orange. Adjustable or fitted — works all season.</p>
           </div>
           <a class="btn-amazon" href="https://www.amazon.com/s?k=Tennessee+Volunteers+hat+Power+T&tag=YOUR_TAG-20" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
 
-      <h3>Layer Up for Late October</h3>
+      <h3>Layer Up for Late October at Neyland</h3>
       <p>
-        Neyland in October and November gets cold. The Tennessee River doesn't help. An orange
-        quarter-zip or pullover is essential if you're making it to the late-season games — and
-        you should be. This is the era. Show up.
+        Neyland in October and November gets cold fast. The Tennessee River doesn't help.
+        An orange quarter-zip is essential for the late-season games — and you should be
+        at every late-season game. This is the era.
       </p>
       <div class="product-list">
         <div class="product-card">
@@ -125,8 +142,9 @@
 
       <h2>Stadium Bag — Neyland Policy</h2>
       <p>
-        Neyland Stadium is clear bag only. Same SEC policy — 12"x6"x12" clear tote or a small clutch
-        under 4.5"x6.5". The Vol Walk is crowded enough without wrestling a backpack through it.
+        Neyland Stadium is clear bag only — same SEC policy everywhere. 12"x6"x12" clear tote
+        or a small clutch under 4.5"x6.5". The Vol Walk is crowded enough without wrestling
+        a backpack through it.
       </p>
       <div class="product-list">
         <div class="product-card">
@@ -140,22 +158,20 @@
 
       <h2>The Bottom Line</h2>
       <p>
-        Go Big Orange. Vol fans have been patient — now it's time to be loud. Neyland at full
-        capacity with a legitimate contender on the field is one of the great experiences in
-        college football, and this is the year to make the most of it.
+        Go Big Orange. Neyland at full capacity with a legitimate contender on the field is one of
+        the great experiences in college football, and this is the year to make the most of it.
+        Get your gear right before September. The checkerboard end zones will be ready.
       </p>
-      <p>
-        Get your gear right before September. The checkerboard end zones will be ready. Make sure you are too.
-      </p>
+      <p><strong>Make sure you are too. GBO.</strong></p>
 
       <div class="disclosure">
-        As an Amazon Associate I earn from qualifying purchases. Prices and availability subject to change.
+        As an Amazon Associate I earn from qualifying purchases. Prices and availability subject to change. Saturday Selects is a participant in the Amazon Services LLC Associates Program.
       </div>
     </div>
-  </main>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Saturday Selects. As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>&copy; 2025 Saturday Selects &nbsp;·&nbsp; <a href="../about.html">About</a> &nbsp;·&nbsp; As an Amazon Associate I earn from qualifying purchases.</p>
   </footer>
 
 </body>
